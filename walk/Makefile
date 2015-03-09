@@ -10,7 +10,7 @@ BIPED2I = dynamics-impact.o sdfast/b1ss_dyn.o sdfast/b1ss_sar.o sdfast/b1sslib.o
 
 .PHONY: all clean
 
-all: simulate animate simulatei learn
+all: simulate animate simulatei learn example_walk
 
 simulate: simulate.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o
 	$(CC) $(CFLAGS) -o $@ simulate.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o -lm
@@ -28,6 +28,9 @@ animate: animate.o parameters.o ../useful/mrdplot/mrdplot.o
 learn: learn.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o
 	$(CC) $(CFLAGS) -o $@ learn.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o -lm
 
+example_walk: parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o
+	$(CC) $(CFLAGS) -o $@ example_walk.o cmaes.c parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o -lm
+
 animate.o:	main.h main2.h
 controller.o:	main.h main2.h
 data.o:	main.h main2.h
@@ -36,6 +39,7 @@ dynamics-impact.o:	main.h main2.h
 parameters.o:	main.h main2.h
 simulate.o:	main.h main2.h
 learn.o:	main.h main2.h
+example_walk.o:	main.h main2.h
 
 clean: 
-	$(RM) simulate simulatei animate learn *.o
+	$(RM) simulate simulatei animate learn example_walk *.o
