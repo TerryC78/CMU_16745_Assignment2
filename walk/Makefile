@@ -28,7 +28,7 @@ animate: animate.o parameters.o ../useful/mrdplot/mrdplot.o
 learn: learn.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o
 	$(CC) $(CFLAGS) -o $@ learn.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o -lm
 
-example_walk: parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o
+example_walk: example_walk.o parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o
 	$(CC) $(CFLAGS) -o $@ example_walk.o cmaes.c parameters.o controller.o data.o $(BIPED2) ../useful/trajectory/trajectory.o ../useful/mrdplot/mrdplot.o -lm
 
 animate.o:	main.h main2.h

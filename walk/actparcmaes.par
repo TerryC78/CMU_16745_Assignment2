@@ -1,0 +1,86 @@
+
+# Read from cmaes_initials.par at Mon Mar  9 17:37:42 2015
+
+ N 21
+ typicalX 21
+      0       0       0       0       0
+      0       0       0       0       0
+      0       0       0       0       0
+      0       0       0       0       0
+      0 
+ initialX 21
+   0.89  -0.047    0.33   -0.37    -0.1
+  -0.43    0.29    0.26   -0.08    0.11
+  -0.14   -0.22  -0.031    0.28   0.085
+   0.41   -0.38  -0.046   -0.29   -0.36
+  -0.12 
+ initialStandardDeviations 21
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+    0.3 
+ seed 859795432
+ stopMaxFunEvals 1e+299
+ stopMaxIter 1e+299
+ stopFitness
+ stopTolFun 1e-12
+ stopTolFunHist 1e-13
+ stopTolX 1e-11
+ stopTolUpXFactor 1000
+ lambda 13
+ mu 6
+ weights   log
+ cs 0.213749
+ damps 1.21375
+ ccumcov 0.16
+ mucov 3.98087
+ ccov 0.0107807
+ diagonalCovarianceMatrix 0
+ updatecov 0.441705
+ maxTimeFractionForEigendecompostion 1
+ resume                                                        _no_
+
+
+# Read from cmaes_initials.par at Mon Mar  9 17:39:01 2015
+
+ N 21
+ typicalX 21
+      0       0       0       0       0
+      0       0       0       0       0
+      0       0       0       0       0
+      0       0       0       0       0
+      0 
+ initialX 21
+   0.89  -0.047    0.33   -0.37    -0.1
+  -0.43    0.29    0.26   -0.08    0.11
+  -0.14   -0.22  -0.031    0.28   0.085
+   0.41   -0.38  -0.046   -0.29   -0.36
+  -0.12 
+ initialStandardDeviations 21
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+    0.3 
+ seed 859803332
+ stopMaxFunEvals 1e+299
+ stopMaxIter 1e+299
+ stopFitness
+ stopTolFun 1e-12
+ stopTolFunHist 1e-13
+ stopTolX 1e-11
+ stopTolUpXFactor 1000
+ lambda 13
+ mu 6
+ weights   log
+ cs 0.213749
+ damps 1.21375
+ ccumcov 0.16
+ mucov 3.98087
+ ccov 0.0107807
+ diagonalCovarianceMatrix 0
+ updatecov 0.441705
+ maxTimeFractionForEigendecompostion 1
+ resume                                                        _no_
+
