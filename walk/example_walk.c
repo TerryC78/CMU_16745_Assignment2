@@ -63,8 +63,10 @@ int main(int argc, char **argv) {
   /* Initialize the simulator */
   PARAMETER *params;
   int n_parameters;
-  double init_score, new_score;
+  double score, new_score;
   int found_sol = 0;
+  int max_run = 10;
+  int run_counter = 0;
 
   init_default_parameters( &sim );
   sim.rand_scale = 0;
@@ -87,7 +89,7 @@ int main(int argc, char **argv) {
   init_data( &sim );
 
   sim.controller_print = 0;
-  init_score = run_sim( &sim );
+  score = run_sim( &sim );
 
   char const *param_names[21];
   param_names[0] = "swing_time";
@@ -147,8 +149,13 @@ int main(int argc, char **argv) {
 
     	  new_score = run_sim(&sim);
     	  arFunvals[i] = new_score;
-    	  if(new_score < init_score && sim.status != CRASHED) {
-    		  found_sol = 1;
+    	  if(new_score < score && sim.status != CRASHED) {
+    		  score = new_score;
+    		  run_counter = run_counter + 1;
+    		  printf("%f\t%d\n", score, run_counter);
+    		  if(run_counter == max_run) {
+    			  found_sol = 1;
+    		  }
     	  }
       }
 

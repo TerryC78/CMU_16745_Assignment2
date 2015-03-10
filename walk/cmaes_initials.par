@@ -36,7 +36,7 @@ restarts 0                    # read by example_restarts.c, remark that restarts
  typicalX 1:   # Typical search point (useful for restarts, cave: boundaries), overwritten by initialX 
     0.0        #    these are the read value(s)
  initialStandardDeviations  1:   #  1==read only one number for all coordinates (control variables?)
-   0.3                           #  numbers should not differ by orders of magnitude
+   0.01                           #  numbers should not differ by orders of magnitude
                                  #  should be roughly 1/4 of the search interval
                                  #  this number essentially influences the global 
                                  #  search ability (ie. the horizon where to search
