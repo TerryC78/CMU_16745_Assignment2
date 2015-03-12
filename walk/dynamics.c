@@ -37,6 +37,8 @@ ankle +
 #include "main2.h"
 #include "sdfast/b1g.h"
 
+#include "noise.h"
+
 /************************************************************************/
 /* DEFINES */
 
@@ -603,7 +605,7 @@ void b1guforce( double t, double *q, double *u )
 			sim.foot_offset, BODY_R_CALF, sim.ground_force[RIGHT] );
 
   // Apply horizontal perturbation to torso
-  force[0] = sim.torso_perturbation;
+  force[0] = /*sim.torso_perturbation*/ noise(t);
   force[1] = 0.0;
   force[2] = 0.0;
   bodypos[0] = 0.0;

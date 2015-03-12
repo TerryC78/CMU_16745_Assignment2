@@ -41,6 +41,7 @@ main( int argc, char **argv )
 
   init_sim( &sim );
   init_data( &sim );
+  noise_init();
 
   for( i = 0; sim.time < sim.duration; i++ )
     {
