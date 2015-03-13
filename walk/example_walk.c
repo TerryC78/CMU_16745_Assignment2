@@ -6,9 +6,11 @@
 #include <stdlib.h> /* free() */
 #include <stddef.h> /* NULL */
 #include <math.h>
+
 #include "main.h"
 #include "main2.h"
 #include "cmaes_interface.h"
+#include "noise.h"
 
 extern SIM sim;
 
@@ -69,8 +71,8 @@ int main(int argc, char **argv) {
   int run_counter = 0;
 
   init_default_parameters( &sim );
-  sim.rand_scale = 0;
-  sim.controller_print = 1;
+  sim.rand_scale = 27;
+  sim.controller_print = 0;
 
   /* Parameter file argument? */
   if ( argc > 1 )
@@ -87,8 +89,7 @@ int main(int argc, char **argv) {
 
   init_sim( &sim );
   init_data( &sim );
-
-  sim.controller_print = 0;
+  noise_init();
   score = run_sim( &sim );
 
   char const *param_names[21];
@@ -113,6 +114,8 @@ int main(int argc, char **argv) {
   param_names[18] = "stance_kv2";
   param_names[19] = "stance_ka2";
   param_names[20] = "stance_ankle_torque";
+//  param_names[21] = "swing_knee1_time";
+//  param_names[22] = "pushoff_time";
 
   /* Iterate until stop criterion holds */
   while(!cmaes_TestForTermination(&evo))
@@ -146,6 +149,8 @@ int main(int argc, char **argv) {
     	  sim.stance_kv2 = sampled_sol[18];
     	  sim.stance_ka2 = sampled_sol[19];
     	  sim.stance_ankle_torque = sampled_sol[20];
+//    	  sim.swing_knee1_time = sampled_sol[21];
+//    	  sim.pushoff_time = sampled_sol[22];
 
     	  new_score = run_sim(&sim);
     	  arFunvals[i] = new_score;
@@ -174,7 +179,7 @@ int main(int argc, char **argv) {
   cmaes_WriteToFile(&evo, "all", "allcmaes.dat");         /* write final results */
 
   /* get best estimator for the optimum, xmean */
-  xfinal = cmaes_GetNew(&evo, "xbest"); /* "xbestever" might be used as well */
+  xfinal = cmaes_GetNew(&evo, "xbestever"); /* "xbestever" might be used as well */
   write_sampled_sol(best_filename, xfinal,
       			  param_names, (int) cmaes_Get(&evo, "dim"));
   cmaes_exit(&evo); /* release memory */ 

@@ -33,6 +33,8 @@ restarts 0                    # read by example_restarts.c, remark that restarts
    -0.29
    -0.36
    -0.12
+#   0.7
+#   0.5
  typicalX 1:   # Typical search point (useful for restarts, cave: boundaries), overwritten by initialX 
     0.0        #    these are the read value(s)
  initialStandardDeviations  1:   #  1==read only one number for all coordinates (control variables?)

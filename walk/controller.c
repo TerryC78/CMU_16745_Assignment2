@@ -186,10 +186,11 @@ int reinit_controller( SIM *s )
   s->hip_angled_d[RIGHT] = s->hip_angled[RIGHT];
   s->knee_angled_d[LEFT] = s->knee_angled[LEFT];
   s->knee_angled_d[RIGHT] = s->knee_angled[RIGHT];
-  /* sidestep angle perturbation for now
-  s->ankle_angled_d[LEFT] = s->ankle_angled[LEFT];
-  s->ankle_angled_d[RIGHT] = s->ankle_angled[RIGHT];
-  */
+
+  /* sidestep angle perturbation for now */
+//  s->ankle_angled_d[LEFT] = s->ankle_angled[LEFT];
+//  s->ankle_angled_d[RIGHT] = s->ankle_angled[RIGHT];
+
   s->ankle_angled_d[LEFT] = 0;
   s->ankle_angled_d[RIGHT] = 0;
 
@@ -511,7 +512,7 @@ run_servos( SIM *s )
     }
 
   /* Apply random noise */
-  
+//  printf("%f\n", s->rand_scale);
   for ( i = LEFT; i <= RIGHT; i++ )
     {
       s->hip_torque[i] += s->rand_scale*((2.0*rand())/RAND_MAX - 1.0);

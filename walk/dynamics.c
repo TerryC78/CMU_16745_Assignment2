@@ -605,7 +605,10 @@ void b1guforce( double t, double *q, double *u )
 			sim.foot_offset, BODY_R_CALF, sim.ground_force[RIGHT] );
 
   // Apply horizontal perturbation to torso
-  force[0] = /*sim.torso_perturbation*/ noise(t);
+//  force[0] = sim.torso_perturbation;
+  force[0] = noise(t);
+//  printf("%f\n", force[0]);
+
   force[1] = 0.0;
   force[2] = 0.0;
   bodypos[0] = 0.0;

@@ -38,7 +38,7 @@ void noise_init() {
             return;
     }
 
-    // NOTE: only one seeding per execution
+    // NOTE: only one seed per execution
     fscanf(f_noise, "%d", &noise_seed);
     srand(noise_seed);
 
