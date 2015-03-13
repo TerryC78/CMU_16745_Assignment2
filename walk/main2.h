@@ -15,3 +15,4 @@ void init_state_two_feet_on_ground( SIM *s );
 void init_dynamics( SIM *s );
 float call_many_func( float *x );
 double call_many_func_d( double *x );
+
