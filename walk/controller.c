@@ -511,14 +511,14 @@ run_servos( SIM *s )
     }
 
   /* Apply random noise */
-  /* skip this for now.
+  
   for ( i = LEFT; i <= RIGHT; i++ )
     {
       s->hip_torque[i] += s->rand_scale*((2.0*rand())/RAND_MAX - 1.0);
       s->knee_torque[i] += s->rand_scale*((2.0*rand())/RAND_MAX - 1.0);
       s->ankle_torque[i] += s->rand_scale*((2.0*rand())/RAND_MAX - 1.0);
     }
-  */
+  
 
   /* Check for saturation. */
   for ( i = LEFT; i <= RIGHT; i++ )
