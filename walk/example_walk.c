@@ -67,11 +67,11 @@ int main(int argc, char **argv) {
   int n_parameters;
   double score, new_score;
   int found_sol = 0;
-  int max_run = 10;
+  int max_run = 50;
   int run_counter = 0;
 
   init_default_parameters( &sim );
-  sim.rand_scale = 27;
+  sim.rand_scale = 0;
   sim.controller_print = 0;
 
   /* Parameter file argument? */
