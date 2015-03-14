@@ -24,7 +24,7 @@ main( int argc, char **argv )
   int i;
 
   init_default_parameters( &sim );
-  sim.rand_scale = 28;
+  sim.rand_scale = 0;
 //  sim.torso_perturbation = 0;
   sim.controller_print = 1;
 
